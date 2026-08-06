@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class practica5 {
     public static void mostrarMenu(){
             System.out.println("""
-===== BIBLIOTECA =====
+===== MI BIBLIOTECA =====
 1) Agregar libro físico
 2) Agregar libro digital
 3) Listar todos los libros
@@ -16,7 +16,7 @@ public class practica5 {
         Scanner sc = new Scanner(System.in);
         ArrayList<Libro> libros = new ArrayList<>();
         int opcion = 0;
-        while (opcion != 5){
+        while (opcion != 6){
             mostrarMenu();
             System.out.print("Ingrese una opcion: ");
             opcion = sc.nextInt();
