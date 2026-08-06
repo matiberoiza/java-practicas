@@ -9,7 +9,8 @@ public class practica5 {
 2) Agregar libro digital
 3) Listar todos los libros
 4) Buscar por título
-5) Salir.""");
+5) Eliminar libro
+6) Salir.""");
     }
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
@@ -70,6 +71,23 @@ public class practica5 {
                     }
                     break;
                 case 5:
+                    if (libros.isEmpty()){
+                        System.out.println("No hay libros en el ArrayList para eliminar");
+                    }
+                    else{
+                        System.out.print("ingrese el numero del libro que desea eliminar (del 1 al "+ libros.size() + "): ");
+                        int indice = sc.nextInt() - 1;
+                        sc.nextLine();
+                        if (indice >= 0 && indice < libros.size()){
+                            System.out.printf("Se ha removido el libro %s del ArrayList%n", libros.get(indice).getTitulo());
+                            libros.remove(indice);
+                        }
+                        else{
+                            System.out.println("ERROR: Numero invalido");
+                        }
+                    }
+                    break;
+                case 6:
                     System.out.println("Hasta luego");
                     break;
             }
