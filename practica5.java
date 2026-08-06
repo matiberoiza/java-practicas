@@ -30,7 +30,7 @@ public class practica5 {
                     int paginasLF = sc.nextInt();
                     sc.nextLine();
                     libros.add(new LibroFisico(tituloLF, autorLF, paginasLF));
-                    System.out.println("\nLibro fisico añadido correctamente");
+                    System.out.println("\nLibro fisico añadido correctamente :P");
                     break;
                 case 2:
                     System.out.println(">>>LIBRO DIGITAL<<<");
