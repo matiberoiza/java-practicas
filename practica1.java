@@ -7,7 +7,7 @@ public class practica1 {
         L1.mostrarInfo();
         L1.evaluarTamano();
 
-        LibroDigital ld = new LibroDigital("El laberinto imposible", 500, 30);
+        LibroDigital ld = new LibroDigital("El muelle digital", 500, 30);
         ld.mostrarInfo();
 
         LibroAudio la = new LibroAudio("El muelle audiolibro", 400, 300);
