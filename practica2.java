@@ -60,7 +60,7 @@ class Empleado{
     }
     public void setNombre(String nombreNuevo){
         if (nombreNuevo.isEmpty()){
-            System.out.println("Invalido, el nombre no puede estar vacio");
+            System.out.println("Invalido, el nombre no puede estar vacio :(");
         }
         else {
             nombre = nombreNuevo;
@@ -71,7 +71,7 @@ class Empleado{
     }
     public void setSueldo(int nuevoSueldo){
         if (nuevoSueldo <= 0){
-            System.out.println("El Sueldo no puede ser menor o igual a 0");
+            System.out.println("El Sueldo no puede ser menor o igual a 0 :(");
         }
         else{
             sueldo = nuevoSueldo;
