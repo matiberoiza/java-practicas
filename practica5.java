@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class practica5 {
     public static void mostrarMenu(){
             System.out.println("""
-===== BIBLIOTECA =====
+===== BIBLIOTECA DIGITAL =====
 1) Agregar libro físico
 2) Agregar libro digital
 3) Listar todos los libros
