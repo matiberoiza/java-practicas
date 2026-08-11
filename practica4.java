@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class prcatica4 {
+public class practica4 {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         System.out.print("Ingrese el nombre del producto: ");
