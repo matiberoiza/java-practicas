@@ -4,7 +4,7 @@ public class practica6 {
     public static void menu(){
         System.out.println("""
 ====== CINE ======
-1) Agregar película normal
+1) Agregar película infantil
 2) Agregar película estreno
 3) Ver cartelera
 4) Ver duración total de la cartelera
@@ -36,18 +36,21 @@ public class practica6 {
             int opcion = pedirOpcion(sc);
             switch (opcion) {
                 case 1:
-                    System.out.println(">>>>>PELICULA NORMAL<<<<<");
-                    System.out.print("Ingrese el nombre de la pelicula: ");
-                    String nombreP = sc.nextLine();
+                    System.out.println(">>>>>PELICULA INFANTIL<<<<<");
+                    System.out.print("Ingrese el nombre de la pelicula infantil: ");
+                    String nombrePI = sc.nextLine();
                     System.out.print("Ingrese la duracion de la pelicula en min: ");
-                    int duracionP = sc.nextInt();
+                    int duracionPI = sc.nextInt();
                     sc.nextLine();
                     System.out.print("Ingrese el genero de la pelicula: ");
-                    String generoP = sc.nextLine();
-                    Pelicula p = new Pelicula(nombreP, duracionP, generoP);
-                    sala.agregarPelicula(p);
-                    System.out.println("Se ha añadido la pelicula correctamente");
+                    String generoPI = sc.nextLine();
+                    System.out.print("Ingrese la edad recomendada: ");
+                    int edadR = sc.nextInt();
+                    sc.nextLine();
+                    PeliculaInfantil PI = new PeliculaInfantil(nombrePI,duracionPI,generoPI,edadR);
+                    sala.agregarPelicula(PI);
                     continue;
+
                 case 2:
                     System.out.println(">>>>>PELICULA ESTRENO<<<<<");
                     System.out.print("Ingrese el nombre de la pelicula de estreno: ");
@@ -82,13 +85,12 @@ public class practica6 {
         }
     }
 }
-class Pelicula{
+abstract class Pelicula{
     private String titulo;
     private int duracion;
     private String genero;
-    public String getTitulo(){
-        return titulo;
-    }
+
+    public String getTitulo(){ return titulo;}
     public int getDuracion(){
         return duracion;
     }
@@ -124,9 +126,20 @@ class Pelicula{
             genero = generoNuevo;
         }
     }
-    void mostrarInfo(){
-        System.out.printf("Pelicula: %s | Duracion: %d | Genero: %s%n%n",titulo,duracion,genero);
+    abstract void mostrarInfo();
+}
+class PeliculaInfantil extends Pelicula{
+    int edadrecomendada;
+    PeliculaInfantil(String titulo,int duracion,String genero,int edadrecomendada){
+        super(titulo,duracion,genero);
+        this.edadrecomendada = edadrecomendada;
     }
+    @Override
+    void mostrarInfo(){
+        System.out.printf("Titulo: %s | %d min | %s%n", getTitulo(), getDuracion(), getGenero());
+        System.out.printf("La edad recomendada para esta pelicula es: %d%n%n",edadrecomendada);
+    }
+
 }
 class PeliculaEstreno extends Pelicula{
     int precioExtra;
@@ -140,7 +153,7 @@ class PeliculaEstreno extends Pelicula{
     @Override
     void mostrarInfo(){
         String etiqueta = etiqueta();
-        super.mostrarInfo();
+        System.out.printf("Titulo: %s | %d min | %s%n", getTitulo(), getDuracion(), getGenero());
         System.out.printf(" Precio extra: $%d | %s%n", precioExtra,etiqueta);
     }
 }
