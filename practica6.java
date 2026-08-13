@@ -208,8 +208,7 @@ class Sala{
     void mostrarCartelera(){
         System.out.printf("Sala: %s%n",nombre);
         for (Pelicula p : cartelera){
-            p.mostrarInfo();
-        }
+            p.mostrarInfo();}
     }
     int totalMinutos(){
         int total = 0;
