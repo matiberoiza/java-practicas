@@ -56,14 +56,14 @@ public class practica6 {
                     System.out.print("Ingrese el nombre de la pelicula de estreno: ");
                     String nombrePE = sc.nextLine();
                     System.out.print("Ingrese la duracion de la pelicula en min: ");
-                    int duracionPE = sc.nextInt();
-                    sc.nextLine();
+                    int duracionPE = sc.nextInt();sc.nextLine();
                     System.out.print("Ingrese el genero de la pelicula: ");
                     String generoPE = sc.nextLine();
                     System.out.print("Ingrese el precio extra a pagar: $");
-                    int precioExtra = sc.nextInt();
-                    sc.nextLine();
-                    PeliculaEstreno PE = new PeliculaEstreno(nombrePE, duracionPE, generoPE, precioExtra);
+                    int precioExtra = sc.nextInt();sc.nextLine();
+                    System.out.print("Ingrese un puntaje del 1 al 10 para la pelicula: ");
+                    double calificacion = sc.nextDouble();sc.nextLine();
+                    PeliculaEstreno PE = new PeliculaEstreno(nombrePE, duracionPE, generoPE, precioExtra, calificacion);
                     sala.agregarPelicula(PE);
                     continue;
                 case 3:
@@ -141,12 +141,29 @@ class PeliculaInfantil extends Pelicula{
     }
 
 }
-class PeliculaEstreno extends Pelicula{
+interface Calificable{
+    void calificar(int puntaje);
+    double obtenerCalificacion();
+}
+class PeliculaEstreno extends Pelicula implements Calificable{
     int precioExtra;
-    PeliculaEstreno(String titulo, int duracion, String genero, int precioExtra){
+    double calificacion = 0;
+    PeliculaEstreno(String titulo, int duracion, String genero, int precioExtra, double calificacion){
         super(titulo,duracion,genero);
         this.precioExtra = precioExtra;
+        this.calificacion = calificacion;
     }
+    @Override
+    public void calificar(int puntaje){
+        if (puntaje >= 1 && puntaje <= 10){
+            calificacion = puntaje;
+        }else{
+            System.out.println("La calificacion debe ser entre 1 y 10");
+        }
+    }
+    @Override
+    public double obtenerCalificacion(){return calificacion;}
+    
     String etiqueta(){
         return "Estreno 🎬";
     }
@@ -154,7 +171,7 @@ class PeliculaEstreno extends Pelicula{
     void mostrarInfo(){
         String etiqueta = etiqueta();
         System.out.printf("Titulo: %s | %d min | %s%n", getTitulo(), getDuracion(), getGenero());
-        System.out.printf(" Precio extra: $%d | %s%n", precioExtra,etiqueta);
+        System.out.printf(" Precio extra: $%d | %s | Calificacion: %.1f%n", precioExtra,etiqueta,calificacion);
     }
 }
 class Sala{
