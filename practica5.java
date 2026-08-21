@@ -23,7 +23,7 @@ public class practica5 {
             sc.nextLine();
             switch (opcion) {
                 case 1:
-                    System.out.println(">>>LIBRO FISICO<<<");
+                    System.out.println(">>>LIBRO FISICO<<<")
                     System.out.print("Titulo: ");
                     String tituloLF = sc.nextLine();
                     System.out.print("Autor: ");
@@ -47,7 +47,7 @@ public class practica5 {
                     System.out.println("\nLibro digital añadido correctamente");
                     break;
                 case 3:
-                    if (libros.size() == 0){
+                    if (libros.isEmpty()){
                         System.out.println("No hay datos ingresados en el ArrayList");
                     }
                     else{
