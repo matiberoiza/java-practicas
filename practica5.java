@@ -23,7 +23,7 @@ public class practica5 {
             sc.nextLine();
             switch (opcion) {
                 case 1:
-                    System.out.println(">>>LIBRO FISICO<<<")
+                    System.out.println(">>>LIBRO FISICO<<<");
                     System.out.print("Titulo: ");
                     String tituloLF = sc.nextLine();
                     System.out.print("Autor: ");
