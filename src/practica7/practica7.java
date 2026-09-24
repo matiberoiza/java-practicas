@@ -1,3 +1,5 @@
+package practica7;
+
 import java.util.Scanner; //importo un scanner para utilizarlo como un input
 class practica7 {
     public static int pedir_y_validarN(Scanner s,String mensaje){ //creo un metodo estatico fuera del main en el que valido numeros

@@ -1,3 +1,5 @@
+package practica5;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 //prueba de diff

@@ -1,3 +1,5 @@
+package practica3;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 

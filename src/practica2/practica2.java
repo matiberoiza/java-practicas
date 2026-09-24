@@ -1,3 +1,5 @@
+package practica2;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 class Practica2Main {
