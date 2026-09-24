@@ -1,4 +1,4 @@
-public class practica1 {
+class Practica1Main {
     public static void main(String[] args) {
         Libro L1 = new Libro("El muelle",400);
 

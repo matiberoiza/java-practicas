@@ -1,5 +1,5 @@
 import java.util.Scanner; //importo un scanner para utilizarlo como un input
-public class practica7{
+class practica7 {
     public static int pedir_y_validarN(Scanner s,String mensaje){ //creo un metodo estatico fuera del main en el que valido numeros
         while (true){
             try{
@@ -21,15 +21,18 @@ public class practica7{
             System.out.println("Ingresa solo letras");
             System.out.print(mensaje);
         }
-        
-                
+
+
     }
+}
+
+class Practica7Main {
     public static void main(String[] args){
     Scanner s = new Scanner(System.in);
-    String titulo = validarSTR(s, "Ingrese el titulo: ");
-    int duracion = pedir_y_validarN(s, "Ingrese la duracion de la pelicula: ");
-    String autor = validarSTR(s, "Ingrese el nombre del autor: ");
-    int costo = pedir_y_validarN(s, "Ingrese el valor de la entrada: $");
+    String titulo = practica7.validarSTR(s, "Ingrese el titulo: ");
+    int duracion = practica7.pedir_y_validarN(s, "Ingrese la duracion de la pelicula: ");
+    String autor = practica7.validarSTR(s, "Ingrese el nombre del autor: ");
+    int costo = practica7.pedir_y_validarN(s, "Ingrese el valor de la entrada: $");
 
     System.out.printf("Titulo: %s | Duracion: %d minutos | Autor: %s | Costo de entrada: $%d%n",titulo,duracion,autor,costo);
     

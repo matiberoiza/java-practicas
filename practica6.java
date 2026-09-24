@@ -1,6 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-public class practica6 {
+class practica6 {
     public static void menu(){
         System.out.println("""
 ====== CINE ======
@@ -27,13 +27,15 @@ public class practica6 {
             System.out.println("ERROR: Ingrese solo numeros dentro del rango(1-5)");
         }
     }
+}
 
+class Practica6Main {
     public static void main(String[] args){
         Sala sala = new Sala("Sala 1", 100);
         Scanner sc = new Scanner(System.in);
 
         while (true){
-            int opcion = pedirOpcion(sc);
+            int opcion = practica6.pedirOpcion(sc);
             switch (opcion) {
                 case 1:
                     System.out.println(">>>>>PELICULA INFANTIL<<<<<");

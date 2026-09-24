@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 //prueba de diff
-public class practica5 {
+class practica5 {
     public static void mostrarMenu(){
             System.out.println("""
 ===== BIBLIOTECA DIGITAL =====
@@ -12,12 +12,15 @@ public class practica5 {
 5) Eliminar libro
 6) Salir.""");
     }
+}
+
+class Practica5Main {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         ArrayList<Libro> libros = new ArrayList<>();
         int opcion = 0;
         while (opcion != 6){
-            mostrarMenu();
+            practica5.mostrarMenu();
             System.out.print("Ingrese una opcion: ");
             opcion = sc.nextInt();
             sc.nextLine();
